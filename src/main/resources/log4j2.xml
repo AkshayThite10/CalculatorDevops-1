@@ -5,7 +5,11 @@
             <PatternLayout pattern="%d{dd/MMM/yyy:HH:mm:ss SSS} [%F] [%level] %logger{36} %msg%n"/>
         </Console>
         <File name="FileAppender" fileName="calculator_devops.log" immediateFlush="false" append="true">
-            <PatternLayout pattern="%d{dd/MMM/yyy:HH:mm:ss SSS} [%F] [%level] %logger{36} %msg%n"/>
+            <PatternLayout pattern="%d{dd/MMM/yyy:HH:mm:ss SSS} [%F] [%level] %logger{36} - %msg%n"/>
+            /*
+            %{HTTPDATE:timestamp_string} \[%{GREEDYDATA:thread}\] \[%{LOGLEVEL:level}\]
+            %{GREEDYDATA:logger} %{GREEDYDATA:action} \- %{GREEDYDATA:input} \- %{GREEDYDATA:output}
+            */
         </File>
     </Appenders>
     <Loggers>
